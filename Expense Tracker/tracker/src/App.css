@@ -1,10 +1,72 @@
+/* Default Theme: theme-blue */
+
+:root {
+  --bg-color: rgb(198, 228, 228);
+  --header-color: rgb(12, 45, 84);
+  --header-bg-color: #b0d0d6;
+  --font-color: rgb(8, 8, 8);
+  --border-color: rgb(28, 135, 135);
+  --box-color: rgb(210, 246, 253);
+  --box-shadow: rgb(28, 135, 135);
+  --theme-color: rgb(8, 154, 154);
+  --theme-background:rgb(159, 192, 195);
+}
+:root.theme-blue {
+  --bg-color: rgb(198, 228, 228);
+  --header-color: rgb(12, 45, 84);
+  --header-bg-color: #b0d0d6;
+  --font-color: rgb(8, 8, 8);
+  --border-color: rgb(28, 135, 135);
+  --box-color: rgb(210, 246, 253);
+  --box-shadow: rgb(28, 135, 135);
+  --theme-color: rgb(8, 154, 154);
+  --theme-background:rgb(159, 192, 195);
+}
+
+/* Theme: theme-black */
+:root.theme-black {
+  --bg-color: rgb(53, 52, 52);
+  --header-color: rgb(255, 255, 255);
+  --header-bg-color: rgb(88, 84, 84);
+  --font-color: rgba(252, 249, 249, 0.998);
+  --border-color: gray;
+  --box-color: rgb(197, 197, 197);
+  --box-shadow: rgb(8, 8, 8);
+  --theme-color: rgb(6, 6, 6);
+  --theme-background:rgb(156, 160, 161);
+}
+:root.theme-white {
+  --bg-color: rgb(228, 227, 227);
+  --header-color: rgb(41, 41, 40);
+  --header-bg-color: rgb(226, 228, 221);
+  --font-color: rgba(18, 17, 17, 0.998);
+  --border-color: gray;
+  --box-color: rgb(240, 241, 237);
+  --box-shadow: rgb(83, 83, 81);
+  --theme-color: rgb(253, 251, 251);
+  --theme-background:rgb(203, 205, 205);
+}
+
+/* Theme: theme-red */
+:root.theme-red {
+  --bg-color: rgb(143, 74, 74);
+  --header-color: white;
+  --header-bg-color: darkred;
+  --font-color: rgb(16, 7, 7);
+  --border-color: darkred;
+  --box-color: rgb(239, 162, 162);
+  --box-shadow: darkred;
+  --theme-color: rgb(225, 39, 39);
+  --theme-background:rgb(201, 132, 132);
+}
+
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(183, 228, 228);
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,23 +77,41 @@ body {
 }
 
 .container {
-  margin: 30px auto;
+  margin: 100px auto;
   width: 350px;
 }
-
+.t{
+  font-style: oblique;
+}
+.theme-switcher-container {
+  position: absolute;
+  left: 10px;
+   color: var(--border-color);
+ }
+ .theme-dropdown {
+   height: 25px;
+   color: var(--border-color);
+   width: 150px;
+   font-size: 16px;
+   border: 2px solid var(--border-color);
+   border-radius: 4px;
+   background-color: var(--box-color);
+   box-shadow: 17px 15px 5px var(--box-shadow);
+   cursor: pointer;
+ }
 .title{
-  margin-left: 68px; 
+  margin-top: 100px;
   font-size: xx-large;
   font-family:'Times New Roman';
   height: 60px;
   padding: 10px;
-  margin-top: 20px;
   border-radius: 50px;
+  margin-left: 60px;
   width: 240px;
   font-style: italic;
-  color:rgb(12, 45, 84);
-  background-color: #b0d0d6;
-  box-shadow: 20px 18px 16px  rgb(28, 135, 135);
+  color:var(--header-color);
+  background-color: var(--header-bg-color);
+  box-shadow: 20px 18px 16px var(--box-shadow);
 }
 .bal{
    font-size:xx-large;
@@ -39,6 +119,7 @@ body {
     font-family:'Times New Roman';
     text-align: center;
     height: 50px;
+    color: var(--font-color);
     padding: 10px;
     border-radius: 50px;
     margin-left: 66px;
@@ -48,22 +129,25 @@ body {
 h1 {
   letter-spacing: 1px;
   margin: 0;
+  color: var(--font-color);
 }
 
 h3 {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   margin: 40px 0 10px;
+  color: var(--font-color);
 }
 
 h4 {
   margin: 0;
   text-transform: uppercase;
+  color: var(--font-color);
 }
 
 .inc-exp-container {
-  background-color: rgb(210, 246, 253);
-  box-shadow: 20px 18px 25px   rgb(28, 135, 135);
+  background-color: var(--box-color);
+  box-shadow: 20px 18px 25px   var(--box-shadow);
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -100,7 +184,7 @@ label {
 
 input[type='text'],
 input[type='number'] {
-  border: 3px solid  rgb(28, 135, 135);
+  border: 3px solid  var(--border-color);
   border-radius: 2px;
   display: block;
   font-size: 16px;
@@ -110,7 +194,7 @@ input[type='number'] {
 
 .btn {
   cursor: pointer;
-  background-color:  rgb(28, 135, 135);
+  background-color: var(--border-color);
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -183,6 +267,12 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+.theme-label{
+  margin-left: 40px;
+  color: var(--theme-color);
+  
 }
 
 
